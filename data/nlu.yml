@@ -1,0 +1,60 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+# Request Pizza
+
+- intent: request_init
+  examples: |
+    - I want to order a pizza
+    - I want pizza
+    - Pizza
+    - Give me pizza
+    - Provide me pizza
+    - Give pizza
+    - Provide pizza
+    - Pizza pls
+    - Pizza please
+    - Pizza order
+    - Order pizza
+    - Order a pizza for me
+
+# Order Pizza
+
+- intent: order_pizza
+  examples: |
+    - I want to order [2](pizza_count) [small](pizza_size) [cheese](pizza_type) pizzas
+    - I want to order [2](pizza_count) [small](pizza_size) [cheese](pizza_type) pizza
+    - I want [2](pizza_count) [small](pizza_size) [cheese](pizza_type) pizza
+    - I want to order [2](pizza_count) [cheese](pizza_type) pizzas with [small](pizza_size) size
+    - I want to order [2](pizza_count) [cheese](pizza_type) pizza with [small](pizza_size) size
+    - I want [cheese](pizza_type) pizza with [small](pizza_size) in size and quantity is [2](pizza_count)
+    - order [2](pizza_count) [small](pizza_size) [cheese](pizza_type) pizzas for me
+    - order [small](pizza_size) [2](pizza_count) pizzas with [cheese](pizza_type) for me
+    - provide [2](pizza_count) [small](pizza_size) [cheese](pizza_type) pizzas
+    - order [2](pizza_count) [large](pizza_size) size [cheese](pizza_type) pizzas
+    - please give me [2](pizza_count) [paneer](pizza_type) in [large](pizza_size) size
+
+# Confirm
+
+- intent: confirm
+  examples: |
+    - Yes, please make it fast
+    - Yes please
+    - Yes pls
+    - please do it fast

@@ -1,0 +1,14 @@
+version: "3.1"
+
+stories:
+
+- story: request order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_init
+  - action: utter_pizza_menu
+  - intent: order_pizza
+  - action: action_order
+  - intent: confirm
+  - action: utter_confirm

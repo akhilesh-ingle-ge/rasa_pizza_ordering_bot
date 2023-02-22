@@ -1,0 +1,67 @@
+version: "3.1"
+
+intents:
+  - greet
+  - request_init
+  - order_pizza
+  - confirm
+
+entities:
+  - pizza_count
+  - pizza_size
+  - pizza_type
+
+
+slots:
+  pizza_count:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: pizza_count
+
+  pizza_size:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: pizza_size
+
+  pizza_type:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: pizza_type
+
+actions:
+  - action_order
+
+# forms:
+
+responses:
+  utter_greet:
+  - text: "Hey! How can I help you"
+  - text: "hello! What can I do for you"
+  - text: "Hii!, How are you"
+  - text: "Welcome to Pizza Mania, how can I help you"
+
+  utter_pizza_menu:
+  - text: "Yes sir, we have cheese pizza and paneer pizza in all different sizes. i.e. small, medium and large"
+  - text: "Yes sir, we have cheese, paneer and veg pizza in all different sizes. i.e. small, medium and large"
+  - text: "Yes sir, we have cheese and paneer pizza in all different sizes. i.e. small, medium and large"
+
+  utter_confirm:
+  - text: "Sure, we delivering your order as soon as possible"
+  - text: "Sure, you will get your order very soon..."
+  - text: "Sure, your order is processing, you will get it very soon"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
